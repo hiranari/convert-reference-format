@@ -8,3 +8,12 @@ cache:
 
 script:
   - npm run test:unit && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local-dir: dist
+  on:
+    branch: master
