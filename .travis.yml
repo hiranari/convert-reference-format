@@ -8,6 +8,7 @@ cache:
 
 script:
   - npm run test:unit && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
+  - npm run build
 
 deploy:
   provider: pages
